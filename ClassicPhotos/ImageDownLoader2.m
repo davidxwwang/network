@@ -199,7 +199,10 @@ didReceiveResponse:(NSURLResponse *)response
     _downloadProgress = block;
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 - (void)connectionDidFinishLoading:(NSURLConnection __unused *)connection {
    // self.responseData = [self.outputStream propertyForKey:NSStreamFileCurrentOffsetKey];
     

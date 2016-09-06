@@ -22,10 +22,15 @@ typedef void (^connectionOperationProgressBlock)(NSUInteger bytes, long long tot
 
 - (id)initWithPhotoRecord:(PhotoRecord *)record AtIndexPath:(NSIndexPath *)indexPath delegate:(id)theDelegate;
 @property (readwrite, nonatomic, strong) NSURLConnection *connection;
-@property (readonly, nonatomic, strong) NSHTTPURLResponse *response;
+@property (readonly,  nonatomic, strong) NSHTTPURLResponse *response;
 @property (readwrite, nonatomic, strong) NSURLRequest *request;
 
 @property (readwrite, nonatomic, copy) connectionOperationProgressBlock downloadProgress;
 
+<<<<<<< Updated upstream
+=======
+- (void)pause;
+- (void)resume;
+>>>>>>> Stashed changes
 
 @end

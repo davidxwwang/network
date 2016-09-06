@@ -43,9 +43,18 @@
     self.tableView.rowHeight = 80.0f;
     
     ImageDownLoader2 *imageDownloader = [[ImageDownLoader2 alloc] init];
+<<<<<<< Updated upstream
     [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
         NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
     }];
+=======
+//    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
+//        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
+//    }];
+//    imageDownloader.downloadProgress = ^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
+//        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
+//    };
+>>>>>>> Stashed changes
     
 
     //[self.pendingOperations.downloadsInProgress setObject:imageDownloader forKey:indexPath];
@@ -58,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSUInteger count = self.photos.count;
-    return count;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,7 +79,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        cell.accessoryView = activityIndicatorView;
+        UIProgressView *view = [[UIProgressView alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
+        view.trackTintColor = [UIColor redColor];
+        //[view setProgress:0.4];
+        cell.accessoryView = view;
     }
     
     
