@@ -33,6 +33,7 @@
 		543D1C871756E61B0016797D /* Failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 543D1C831756E61B0016797D /* Failed@2x.png */; };
 		543D1C881756E61B0016797D /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 543D1C841756E61B0016797D /* Placeholder.png */; };
 		543D1C891756E61B0016797D /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 543D1C851756E61B0016797D /* Placeholder@2x.png */; };
+		6305C0B71D7ED59900E0418D /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305C0B61D7ED59900E0418D /* MD5.m */; };
 		6ED2EAC71D69610E007E5974 /* ImageDownLoader2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EAC61D69610E007E5974 /* ImageDownLoader2.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,8 @@
 		543D1C831756E61B0016797D /* Failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Failed@2x.png"; sourceTree = "<group>"; };
 		543D1C841756E61B0016797D /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		543D1C851756E61B0016797D /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
+		6305C0B51D7ED59900E0418D /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
+		6305C0B61D7ED59900E0418D /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5.m; sourceTree = "<group>"; };
 		6ED2EAC51D69610E007E5974 /* ImageDownLoader2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownLoader2.h; sourceTree = "<group>"; };
 		6ED2EAC61D69610E007E5974 /* ImageDownLoader2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownLoader2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 				6ED2EAC51D69610E007E5974 /* ImageDownLoader2.h */,
 				6ED2EAC61D69610E007E5974 /* ImageDownLoader2.m */,
 				54039E0B1755A339000981B6 /* Supporting Files */,
+				6305C0B51D7ED59900E0418D /* MD5.h */,
+				6305C0B61D7ED59900E0418D /* MD5.m */,
 			);
 			path = ClassicPhotos;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				54039E281755E962000981B6 /* PhotoRecord.m in Sources */,
 				54039E2B1755EA72000981B6 /* PendingOperations.m in Sources */,
 				54039E461755FD68000981B6 /* AFHTTPClient.m in Sources */,
+				6305C0B71D7ED59900E0418D /* MD5.m in Sources */,
 				6ED2EAC71D69610E007E5974 /* ImageDownLoader2.m in Sources */,
 				54039E471755FD68000981B6 /* AFHTTPRequestOperation.m in Sources */,
 				54039E481755FD68000981B6 /* AFImageRequestOperation.m in Sources */,

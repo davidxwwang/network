@@ -196,17 +196,12 @@ didReceiveResponse:(NSURLResponse *)response
 }
 
 - (void)setDownloadProgress:( void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))block{
-    self.downloadProgress = block;
+    _downloadProgress = block;
 }
 
-- (void)setTestdemo:(void(^)())testdemo
-{
-    self.testdemo = testdemo;
-
-}
 
 - (void)connectionDidFinishLoading:(NSURLConnection __unused *)connection {
-    //self.responseData = [self.outputStream propertyForKey:NSStreamFileCurrentOffsetKey];
+   // self.responseData = [self.outputStream propertyForKey:NSStreamFileCurrentOffsetKey];
     
     [self.outputStream close];
     if (self.responseData) {
@@ -242,13 +237,13 @@ didReceiveResponse:(NSURLResponse *)response
 
 - (NSOutputStream *)outputStream {
     if (!_outputStream) {
-        
         NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *path = [docs[0] stringByAppendingPathComponent:@"downloadFile"];
-        self.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+        NSLog(@"下载的地址:%@",path);
         
+        NSString *pathMD5 = [MD5 md5:path];
+        self.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
     }
-    
     return _outputStream;
 }
 

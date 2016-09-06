@@ -9,9 +9,9 @@
 #import "PhotoRecord.h"
 #import <Foundation/Foundation.h>
 
-typedef void (^connectionOperationProgressBlock)(NSUInteger bytes, long long totalBytes, long long totalBytesExpected);
+#import "MD5.h"
 
-typedef void (^test)();
+typedef void (^connectionOperationProgressBlock)(NSUInteger bytes, long long totalBytes, long long totalBytesExpected);
 
 @interface ImageDownLoader2 : NSOperation
 
@@ -26,6 +26,6 @@ typedef void (^test)();
 @property (readwrite, nonatomic, strong) NSURLRequest *request;
 
 @property (readwrite, nonatomic, copy) connectionOperationProgressBlock downloadProgress;
-@property (readwrite, nonatomic, copy) test testdemo;
+
 
 @end

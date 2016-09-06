@@ -43,14 +43,11 @@
     self.tableView.rowHeight = 80.0f;
     
     ImageDownLoader2 *imageDownloader = [[ImageDownLoader2 alloc] init];
-//    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
-//        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
-//    }];
-    [imageDownloader setTestdemo:^(){
-     NSLog(@"下载到数据 比率 ＝ vv  ");
-    }
-    ];
+    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
+        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
+    }];
     
+
     //[self.pendingOperations.downloadsInProgress setObject:imageDownloader forKey:indexPath];
    [self.pendingOperations.downloadQueue addOperation:imageDownloader];
     //[self startImageDownloadingForRecord:nil atIndexPath:nil];
