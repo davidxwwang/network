@@ -27,10 +27,8 @@ typedef void (^connectionOperationProgressBlock)(NSUInteger bytes, long long tot
 
 @property (readwrite, nonatomic, copy) connectionOperationProgressBlock downloadProgress;
 
-<<<<<<< Updated upstream
-=======
+
 - (void)pause;
 - (void)resume;
->>>>>>> Stashed changes
 
 @end

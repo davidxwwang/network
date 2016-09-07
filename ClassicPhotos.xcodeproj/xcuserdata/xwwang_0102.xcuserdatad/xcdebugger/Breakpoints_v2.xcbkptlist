@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClassicPhotos/ListViewController.m"
-            timestampString = "494781075.399385"
+            timestampString = "494952738.845088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-suspendAllOperations"
-            landmarkType = "5">
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "@implementation ListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClassicPhotos/ListViewController.m"
-            timestampString = "494781075.399385"
+            timestampString = "494952738.845088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "-imageDownloaderDidFinish:"
             landmarkType = "5">
          </BreakpointContent>
@@ -73,45 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ClassicPhotos/ImageDownLoader2.m"
-            timestampString = "494673141.24479"
+            filePath = "ClassicPhotos/ListViewController.m"
+            timestampString = "494952895.263329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-connection:didReceiveData:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ClassicPhotos/ImageDownLoader2.m"
-            timestampString = "494673141.24479"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-connection:didReceiveResponse:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ClassicPhotos/ImageDownLoader2.m"
-            timestampString = "494777247.079445"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "-outputStream"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-controll:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

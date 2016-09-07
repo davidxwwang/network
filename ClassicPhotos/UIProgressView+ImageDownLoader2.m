@@ -16,7 +16,7 @@
     [operation setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
         dispatch_async(dispatch_get_main_queue(), ^{
             if (totalBytesExpected > 0) {
-               // [self setProgress:(totalBytes / (totalBytesExpected * 1.0f)) animated:animated];
+                [self setProgress:(totalBytes / (totalBytesExpected * 1.0f)) animated:animated];
             }
         });
         

@@ -5,7 +5,7 @@
 //  Created by 王兴朝 on 13-5-29.
 //  Copyright (c) 2013年 bitcar. All rights reserved.
 //
-
+#import "UIProgressView+ImageDownLoader2.h"
 #import "ListViewController.h"
 
 @interface ListViewController ()
@@ -43,19 +43,10 @@
     self.tableView.rowHeight = 80.0f;
     
     ImageDownLoader2 *imageDownloader = [[ImageDownLoader2 alloc] init];
-<<<<<<< Updated upstream
+
     [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
         NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
     }];
-=======
-//    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
-//        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
-//    }];
-//    imageDownloader.downloadProgress = ^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
-//        NSLog(@"下载到数据 比率 ＝ %f",(totalBytes *1.0f) /totalBytesExpected);
-//    };
->>>>>>> Stashed changes
-    
 
     //[self.pendingOperations.downloadsInProgress setObject:imageDownloader forKey:indexPath];
    [self.pendingOperations.downloadQueue addOperation:imageDownloader];
@@ -66,10 +57,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSUInteger count = self.photos.count;
     return 6;
 }
 
+- (void)controll:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    btn.selected = !btn.isSelected;
+    
+    if (btn.isSelected == YES) {
+        for (id downloader in self.pendingOperations.downloadQueue.operations) {
+            [(ImageDownLoader2 *)downloader pause];
+        }
+    }
+    else{
+        for (id downloader in self.pendingOperations.downloadQueue.operations) {
+            [(ImageDownLoader2 *)downloader resume];
+        }
+    
+    }
+    //[self.pendingOperations.downloadQueue addOperation:imageDownloader];
+
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -79,32 +88,45 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        UIProgressView *view = [[UIProgressView alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
-        view.trackTintColor = [UIColor redColor];
-        //[view setProgress:0.4];
-        cell.accessoryView = view;
+        UIProgressView *view = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
+        view.frame =  CGRectMake(200, 20, 80, 30);
+        view.tag = 1000;
+        [cell.contentView addSubview:view];
+        view.trackTintColor = [UIColor lightGrayColor];
+        view.progressTintColor = [UIColor redColor];
+        [view setProgress:0.0];
+       // cell.accessoryView = view;
+        
+        UIButton *controllButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 20, 80, 30)];
+        [controllButton setTitle:@"开始" forState:UIControlStateNormal];
+        [controllButton setTitle:@"暂停" forState:UIControlStateSelected];
+        [controllButton addTarget:self action:@selector(controll:) forControlEvents:UIControlEventTouchUpInside];
+        [controllButton setBackgroundColor:[UIColor lightGrayColor]];
+        [cell.contentView addSubview:controllButton];
     }
     
+    UIProgressView *progressView = (UIProgressView *)[cell.contentView viewWithTag:1000];
+    [self startImageDownloadingForRecord:nil progressView:progressView];
     
-    PhotoRecord *aRecord = [self.photos objectAtIndex:indexPath.row];
-
-    if (aRecord.hasImage) {
-        [(UIActivityIndicatorView *)cell.accessoryView stopAnimating];
-        cell.imageView.image = aRecord.image;
-        cell.textLabel.text = aRecord.name;
-    }else if (aRecord.isFailed){
-        [(UIActivityIndicatorView *)cell.accessoryView stopAnimating];
-        cell.imageView.image = [UIImage imageNamed:@"Failed.png"];
-        cell.textLabel.text = @"Failed to load";
-    }else{
-        [(UIActivityIndicatorView *)cell.accessoryView startAnimating];
-        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
-        cell.textLabel.text = @"";
-
-        if (!tableView.dragging && !tableView.decelerating) {
-            [self startOperationsForPhotoRecord:aRecord atIndexPath:indexPath];
-        }
-    }
+//    PhotoRecord *aRecord = [self.photos objectAtIndex:indexPath.row];
+//
+//    if (aRecord.hasImage) {
+//        [(UIActivityIndicatorView *)cell.accessoryView stopAnimating];
+//        cell.imageView.image = aRecord.image;
+//        cell.textLabel.text = aRecord.name;
+//    }else if (aRecord.isFailed){
+//        [(UIActivityIndicatorView *)cell.accessoryView stopAnimating];
+//        cell.imageView.image = [UIImage imageNamed:@"Failed.png"];
+//        cell.textLabel.text = @"Failed to load";
+//    }else{
+//        [(UIActivityIndicatorView *)cell.accessoryView startAnimating];
+//        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
+//        cell.textLabel.text = @"";
+//
+//        if (!tableView.dragging && !tableView.decelerating) {
+//            [self startOperationsForPhotoRecord:aRecord atIndexPath:indexPath];
+//        }
+//    }
     
     
     return cell;
@@ -214,23 +236,23 @@
     }
 }
 
+- (void)startImageDownloadingForRecord:(PhotoRecord *)record progressView:(UIProgressView *)progressView
+{
+    ImageDownLoader2 *imageDownloader = [[ImageDownLoader2 alloc] init];
+    if (progressView ) {
+        [progressView setProgressWithDownloadProgressOfOperation:imageDownloader animated:NO];
+    }
+    [self.pendingOperations.downloadQueue addOperation:imageDownloader];
+    
+}
+
 
 - (void)startImageDownloadingForRecord:(PhotoRecord *)record atIndexPath:(NSIndexPath *)indexPath
 {
     ImageDownLoader2 *imageDownloader = [[ImageDownLoader2 alloc] init];
-//    [imageDownloader setCompletionBlock:^{
-//        NSLog(@" download finished");
-//    }];
-//    imageDownloader.downloadProgress = ^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
+//    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
 //        NSLog(@"下载到数据 比率 ＝ %lld",totalBytes/totalBytesExpected);
-//    };
-    
-    [imageDownloader setDownloadProgress:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected){
-     NSLog(@"下载到数据 比率 ＝ %lld",totalBytes/totalBytesExpected);
-    }
-     
-     
-     ];
+//    }];
     //[self.pendingOperations.downloadsInProgress setObject:imageDownloader forKey:indexPath];
     [self.pendingOperations.downloadQueue addOperation:imageDownloader];
 
