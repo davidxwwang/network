@@ -34,8 +34,12 @@
 		543D1C881756E61B0016797D /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 543D1C841756E61B0016797D /* Placeholder.png */; };
 		543D1C891756E61B0016797D /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 543D1C851756E61B0016797D /* Placeholder@2x.png */; };
 		6305C0B71D7ED59900E0418D /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305C0B61D7ED59900E0418D /* MD5.m */; };
+
 		633C7B451D80F66B006AFBE4 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633C7B431D80F66B006AFBE4 /* CustomTableViewCell.m */; };
 		633C7B461D80F66B006AFBE4 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633C7B441D80F66B006AFBE4 /* CustomTableViewCell.xib */; };
+		6E22DF311D83022A007B8848 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E22DF301D83022A007B8848 /* CFNetwork.framework */; };
+		6E22DF341D830421007B8848 /* FTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E22DF331D830421007B8848 /* FTPManager.m */; };
+
 		6E7D15061D7DBED60044FC3E /* UIProgressView+ImageDownLoader2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D15051D7DBED60044FC3E /* UIProgressView+ImageDownLoader2.m */; };
 		6ED2EAC71D69610E007E5974 /* ImageDownLoader2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2EAC61D69610E007E5974 /* ImageDownLoader2.m */; };
 /* End PBXBuildFile section */
@@ -86,9 +90,14 @@
 		543D1C851756E61B0016797D /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
 		6305C0B51D7ED59900E0418D /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
 		6305C0B61D7ED59900E0418D /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5.m; sourceTree = "<group>"; };
+
 		633C7B421D80F66B006AFBE4 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		633C7B431D80F66B006AFBE4 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		633C7B441D80F66B006AFBE4 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		6E22DF301D83022A007B8848 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6E22DF321D830421007B8848 /* FTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPManager.h; sourceTree = "<group>"; };
+		6E22DF331D830421007B8848 /* FTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPManager.m; sourceTree = "<group>"; };
+
 		6E7D15041D7DBED60044FC3E /* UIProgressView+ImageDownLoader2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+ImageDownLoader2.h"; sourceTree = "<group>"; };
 		6E7D15051D7DBED60044FC3E /* UIProgressView+ImageDownLoader2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+ImageDownLoader2.m"; sourceTree = "<group>"; };
 		6ED2EAC51D69610E007E5974 /* ImageDownLoader2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownLoader2.h; sourceTree = "<group>"; };
@@ -100,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E22DF311D83022A007B8848 /* CFNetwork.framework in Frameworks */,
 				54039E221755A35D000981B6 /* CoreImage.framework in Frameworks */,
 				54039E051755A339000981B6 /* UIKit.framework in Frameworks */,
 				54039E071755A339000981B6 /* Foundation.framework in Frameworks */,
@@ -131,6 +141,7 @@
 		54039E031755A339000981B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E22DF301D83022A007B8848 /* CFNetwork.framework */,
 				54039E211755A35D000981B6 /* CoreImage.framework */,
 				54039E041755A339000981B6 /* UIKit.framework */,
 				54039E061755A339000981B6 /* Foundation.framework */,
@@ -142,9 +153,13 @@
 		54039E0A1755A339000981B6 /* ClassicPhotos */ = {
 			isa = PBXGroup;
 			children = (
+
 				633C7B421D80F66B006AFBE4 /* CustomTableViewCell.h */,
 				633C7B431D80F66B006AFBE4 /* CustomTableViewCell.m */,
 				633C7B441D80F66B006AFBE4 /* CustomTableViewCell.xib */,
+
+				6E22DF2F1D82FC51007B8848 /* FTP */,
+
 				54039E321755FD5D000981B6 /* AFNetworking_Framework */,
 				54039E131755A339000981B6 /* AppDelegate.h */,
 				54039E141755A339000981B6 /* AppDelegate.m */,
@@ -215,6 +230,15 @@
 			);
 			name = Resources;
 			path = ClassicPhotos/Resources;
+			sourceTree = "<group>";
+		};
+		6E22DF2F1D82FC51007B8848 /* FTP */ = {
+			isa = PBXGroup;
+			children = (
+				6E22DF321D830421007B8848 /* FTPManager.h */,
+				6E22DF331D830421007B8848 /* FTPManager.m */,
+			);
+			path = FTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +325,11 @@
 				54039E4A1755FD68000981B6 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				6E7D15061D7DBED60044FC3E /* UIProgressView+ImageDownLoader2.m in Sources */,
 				54039E4B1755FD68000981B6 /* AFPropertyListRequestOperation.m in Sources */,
+
 				633C7B451D80F66B006AFBE4 /* CustomTableViewCell.m in Sources */,
+
+				6E22DF341D830421007B8848 /* FTPManager.m in Sources */,
+
 				54039E4C1755FD68000981B6 /* AFURLConnectionOperation.m in Sources */,
 				54039E4D1755FD68000981B6 /* AFXMLRequestOperation.m in Sources */,
 				54039E4E1755FD68000981B6 /* UIImageView+AFNetworking.m in Sources */,
